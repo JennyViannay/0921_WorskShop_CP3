@@ -1,4 +1,5 @@
 const albumKeys = ['id', 'author_id', 'gender_id', 'title', 'created_at'];
+const trackKeys = ['id', 'title', 'album_id'];
 
 const albumToCreate = {
   title: 'Flipp',
@@ -10,4 +11,5 @@ const albumToCreate = {
 module.exports = {
   albumKeys,
   albumToCreate,
+  trackKeys
 };
