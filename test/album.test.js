@@ -68,6 +68,16 @@ describe("TESTS POUR LES ROUTES /albums", () => {
 
   // TODO:: test update title
 
-  // TODO:: test delete
+  it('devrait supprimer le dernier album crée depuis "/albums/:id"', async () => {
+    const res = await supertest(app)
+      .delete('/albums/' + persistentDatas.createdAlbum.id)
+      .expect('Content-Type', /json/)
+      .expect(200)
+  });
 
+  it('devrait lever une erreur 404 depuis "/albums/666666"', async () => {
+    const res = await supertest(app)
+      .delete('/albums/666666')
+      .expect(404)
+  });
 });

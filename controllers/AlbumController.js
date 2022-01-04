@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
   try {
     const album = await Album.findById(id);
     album
-      ? res.json(album)
+      ? res.json(album).status(200)
       : res.status(404).json({ message: "Album not found" });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -63,7 +63,7 @@ router.delete('/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const result = await Album.deleteById(id);
-        result ? res.json({message : `AlbumId ${id} has been deleted !`}).status(204) : res.status(404).json({ message: 'Album not found' });
+        result ? res.json({message : `AlbumId ${id} has been deleted !`}).status(200) : res.status(404).json({ message: 'Album not found' });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

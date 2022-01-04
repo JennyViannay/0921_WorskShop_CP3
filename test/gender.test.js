@@ -1,6 +1,6 @@
 const supertest = require("supertest");
 const app = require("../index");
-const { genderKey } = require("./test.data.gender");
+const { genderKeys, genderToCreate } = require("./test.data.gender");
 
 describe("TESTS POUR LES ROUTES /gender", () => {
   it('devrait récupérer la liste des genre depuis "/genders" ', async () => {
@@ -12,11 +12,39 @@ describe("TESTS POUR LES ROUTES /gender", () => {
     expect(Array.isArray(res.body)).toBe(true);
 
     res.body.forEach((gender) => {
-      genderKey.map((prop) => {
+      genderKeys.map((prop) => {
         expect(gender).toHaveProperty(prop);
       });
     });
   });
 
-  // TODO::get one gender
+  it('devrait récupérer le genre id 1 depuis "/gender/1"', async () => {
+    const res = await supertest(app)
+      .get('/genders/1')
+      .expect(200)
+      .expect('Content-Type', /json/);
+
+    genderKeys.map((prop) => {
+      expect(res.body).toHaveProperty(prop);
+    });
+  });
+
+  it('devrait lever une erreur 404 depuis "/gender/666666"', async () => {
+    const res = await supertest(app)
+      .get('/gender/666666')
+      .expect(404)
+  });
+
+  it('devrait créer un nouveau genre depuis "/genders"', async () => {
+    const res = await supertest(app)
+      .post('/genders')
+      .send(genderToCreate)
+      .expect(201)
+      .expect('Content-Type', /json/);
+
+    // albumKeys.map((prop) => {
+    //   expect(res.body).toHaveProperty(prop);
+    // });
+    // persistentDatas.createdAlbum = res.body;
+  });
 });

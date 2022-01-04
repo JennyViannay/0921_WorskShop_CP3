@@ -1,5 +1,10 @@
 const genderKeys = ['id', 'name'];
 
+const genderToCreate = {
+  name: 'rock'
+};
+
 module.exports = {
-  genderKeys
+  genderKeys,
+  genderToCreate
 };

@@ -16,3 +16,10 @@
 ### [ÉTAPE 5] Lancer les tests
 > - ```npm test```
 
+
+
+3 ENVIRONNEMENTS = 
+ENV=prod
+ENV=dev
+ENV=test
+
