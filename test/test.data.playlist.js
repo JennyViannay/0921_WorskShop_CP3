@@ -1,5 +1,10 @@
 const playlistKeys = ["id", "user_id", "title"];
-const playlistTracksKey = ["playlist_id", "track_id"];
+const playlistTracksKey = [
+  "playlist_id",
+  "playlist_title",
+  "track_id",
+  "track_title",
+];
 
 const playlistToCreate = {
   user_id: 1,
