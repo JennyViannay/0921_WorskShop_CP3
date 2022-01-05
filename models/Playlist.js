@@ -1,11 +1,51 @@
 const dbConnect = require('../config/db-config.js');
 
+// get Playlists by User
+const playlistsByUser = (idUser) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
+
 // create Playlist
+const createNew = (playlist) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
 
-// get Playlists by User 
+// get playlist tracks
+const playlistTracks = (idPlaylist) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
 
-// get Tracks Playlist
-
-// add tracks to Playlist 
+// add track to Playlist
+const addTrackToPlaylist = (data) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
 
 // delete tracks from Playlist
+const deleteTrackFromPlaylist = (data) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
+
+const findById = (id) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
+
+module.exports = {
+  playlistsByUser,
+  createNew,
+  playlistTracks,
+  addTrackToPlaylist,
+  deleteTrackFromPlaylist,
+  findById,
+};
