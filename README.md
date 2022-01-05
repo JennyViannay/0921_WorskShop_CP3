@@ -1,4 +1,4 @@
-## Workshop - Express - Test Crud
+## Workshop Spotifly - Express Server - Test Crud
 
 ### [ÉTAPE 1] Créer la base de données 
 > - se connecter au server mysql local ```mysql -u root -p```
