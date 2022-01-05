@@ -17,9 +17,3 @@
 > - ```npm test```
 
 
-
-3 ENVIRONNEMENTS = 
-ENV=prod
-ENV=dev
-ENV=test
-
