@@ -3,6 +3,8 @@ const app = require("../index");
 const { genderKeys, genderToCreate } = require("./test.data.gender");
 
 describe("TESTS POUR LES ROUTES /gender", () => {
+  const persistentDatas = {};
+  
   it('devrait récupérer la liste des genre depuis "/genders" ', async () => {
     const res = await supertest(app)
       .get("/genders")
@@ -42,9 +44,9 @@ describe("TESTS POUR LES ROUTES /gender", () => {
       .expect(201)
       .expect('Content-Type', /json/);
 
-    // albumKeys.map((prop) => {
-    //   expect(res.body).toHaveProperty(prop);
-    // });
-    // persistentDatas.createdAlbum = res.body;
+    genderKeys.map((prop) => {
+      expect(res.body).toHaveProperty(prop);
+    });
+    persistentDatas.createdGender = res.body;
   });
 });

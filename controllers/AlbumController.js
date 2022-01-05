@@ -69,4 +69,6 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
+// get album by gender
+
 module.exports = router;
