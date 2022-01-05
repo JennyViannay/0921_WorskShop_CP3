@@ -14,6 +14,13 @@ const playlistsByUser = (idUser) => {
   });
 };
 
+// get Playlists by User
+const playlistsByUser = (idUser) => {
+  return new Promise((resolve, reject) => {
+    //code here
+  });
+};
+
 // create Playlist
 const createNew = (playlist) => {
   return new Promise((resolve, reject) => {
